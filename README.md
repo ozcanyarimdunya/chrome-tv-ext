@@ -1,7 +1,7 @@
 ### A chrome extension that help me to filter Tv channels on the website.
 
 **How to install**
-1. Download extension [here](https://github.com/ozcanyarimdunya/chrome-tv-ext/blob/master/chrome-tv-ext.crx)
+1. Download extension [here](https://github.com/ozcanyarimdunya/chrome-tv-ext/raw/master/chrome-tv-ext.crx)
 2. Drog and drop `chrome-tv-ext.crx` on chrome
 3. Done! Now go to [website](https://www.ecanlitvizle.live/tv.php) and test it.
 
