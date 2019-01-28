@@ -1,48 +1,28 @@
-var channelList = `
-<ul id="list">
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-
-	<hr>
-
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=trt-1-izle">&nbsp;&nbsp;TRT 1</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=star-tv-canli-izle">&nbsp;&nbsp;STAR TV</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=show-tv-canli-yayin">&nbsp;&nbsp;SHOW TV</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=atv-canli-10">&nbsp;&nbsp;ATV</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=kanal-7-canli">&nbsp;&nbsp;KANAL 7</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=trt-spor-canli">&nbsp;&nbsp;TRT SPOR</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=a-spor-canli-10">&nbsp;&nbsp;A SPOR</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=trt-belgesel-tv-izle">&nbsp;&nbsp;TRT BELGESEL</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=d-max-canli">&nbsp;&nbsp;D MAX</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=trt-haber-izle">&nbsp;&nbsp;TRT HABER</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=haberturk-canli-yayin">&nbsp;&nbsp;HABERTÜRK</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=ntv-canli">&nbsp;&nbsp;NTV</a></li>
-    <li><a href="https://www.ecanlitvizle.live/tv.php?kanal=cnn-turk-canli">&nbsp;&nbsp;CNN TÜRK</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=trt-world-izle">&nbsp;&nbsp;TRT WORLD</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=nhk-world-tv">&nbsp;&nbsp;NHK WORLD</a></li>
-	<li><a href="https://www.ecanlitvizle.live/tv.php?kanal=tlc-tv">&nbsp;&nbsp;TLC TV</a></li>
-
-	<hr>
-</ul>
-`;
-
 async function init() {
-	var channelSide = document.getElementsByClassName('ch-liste')[0];
-	if (channelSide) {
-		channelSide.innerHTML = channelList;
-		document.getElementsByClassName('rtsg')[0].style.setProperty('overflow-y', 'hidden');
-		document.getElementsByClassName('rtsg')[0].style.setProperty('width', '180px');
-		document.getElementsByClassName('rtsl')[0].style.setProperty('margin-right', '180px');
-		document.getElementById('list').style.setProperty('margin-left', '0');
+	if (document.querySelector('footer') && document.querySelector('div.canlitv').nextSibling) {
+		document.querySelector('header.ortalama').parentNode.removeChild(document.querySelector('header.ortalama'))
+		document.querySelector('div.anaustrenk').parentNode.removeChild(document.querySelector('div.anaustrenk'))
+		document.querySelector('div.sag').parentNode.removeChild(document.querySelector('div.sag'))
+		document.querySelector('footer').parentNode.removeChild(document.querySelector('footer'))
+		document.querySelector('div.kanalbilgi').parentNode.removeChild(document.querySelector('div.kanalbilgi'));
+		document.querySelector('div.ilantahtasi').parentNode.removeChild(document.querySelector('div.ilantahtasi'))
+		document.querySelector('div.alternatif').parentNode.removeChild(document.querySelector('div.alternatif'))
+		document.querySelector('div.canlitv').nextSibling.remove()
+
+		document.querySelectorAll('div.sol > :not(.canlitv)').forEach(el=> el.parentNode.removeChild(el))
+		document.querySelectorAll('div.clear').forEach(el=> el.parentNode.removeChild(el))
+		document.querySelectorAll('br').forEach(el=> el.parentNode.removeChild(el))
+
+		document.querySelector('div.canlitv').style.setProperty('padding','0')
+		document.querySelector('div.kanallarliste').style.setProperty('padding','0')
+		document.querySelector('div.yayin').style.setProperty('height','596px')
+		document.querySelector('div#kanallarliste').style.setProperty('height','570px')
+		document.querySelector('div.yayinlar').style.setProperty('width','1140px')
+		document.querySelector('div.sol').style.setProperty('margin-left','5px')
+		document.querySelector('body').style.setProperty('overflow-y', 'hidden')
 	}else{
 		setTimeout(init, 100);
 	}
-
-
 }
 
 init();
