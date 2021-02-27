@@ -24,7 +24,7 @@
         {
             "run_at": "document_start",
             "matches": [
-                "https://www.canlitv.la/*"
+                "https://canlitvizle.gen.tl/*"
             ],
             "js": [
                 "content.js"
