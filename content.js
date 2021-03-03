@@ -11,12 +11,13 @@ async function init(){
 
         document.querySelector('#dis').style.setProperty('box-shadow', '0px 0px 90px 0px #cac6c6');
         document.querySelectorAll('ul.kanal li a').forEach((el, index) => {
-            if (window.location.href === 'https://canlitvizle.gen.tl/tv' && index == 0) {
+            if (el.getAttribute('href') === window.location.href) {
                 setActiveElement(el);
                 return;
             }
-            if (el.getAttribute('href') === window.location.href) {
-                setActiveElement(el)
+            if (window.location.pathname === '/tv' && index == 0) {
+                setActiveElement(el);
+                return;
             }
         })
 
