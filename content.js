@@ -42,7 +42,7 @@ function removeElement(query) {
     if (el) {
         el.remove();
     } else{
-        setTimeout(() => removeElement(query), 1000);
+        setTimeout(() => removeElement(query), 100);
     }
 }
 
